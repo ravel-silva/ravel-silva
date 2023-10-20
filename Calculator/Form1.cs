@@ -86,7 +86,7 @@ namespace Calculator
                 decimal segundoNumero;
                 if (decimal.TryParse(Visor.Text, out segundoNumero))
                 {
-                    // Use a classe Calculadora para fazer a soma
+                    // Use a classe Soma para fazer a soma
                     decimal resultado = Soma.soma(primeiroNumero, segundoNumero);
                     Visor.Text = resultado.ToString();
                     primeiroNumero = 0; // Reinicie o primeiro número para futuras operações
@@ -113,7 +113,7 @@ namespace Calculator
                 decimal segundoNumero;
                 if (decimal.TryParse(Visor.Text, out segundoNumero))
                 {
-                    // Use a classe Calculadora para fazer a subtração
+                    // Use a classe Subt para fazer a subtração
                     decimal resultado = Subt.subt(primeiroNumero, segundoNumero);
                     Visor.Text = resultado.ToString();
                     primeiroNumero = 0; // Reinicie o primeiro número para futuras operações
@@ -139,7 +139,7 @@ namespace Calculator
                 decimal segundoNumero;
                 if (decimal.TryParse(Visor.Text, out segundoNumero))
                 {
-                    // Use a classe Calculadora para fazer a subtração
+                    // Use a classe Divisao para fazer a subtração
                     decimal resultado = Divisao.devisao(primeiroNumero, segundoNumero);
                     Visor.Text = resultado.ToString();
                     primeiroNumero = 0; // Reinicie o primeiro número para futuras operações
@@ -165,7 +165,7 @@ namespace Calculator
                 decimal segundoNumero;
                 if (decimal.TryParse(Visor.Text, out segundoNumero))
                 {
-                    // Use a classe Calculadora para fazer a subtração
+                    // Use a classe Muktio para fazer a subtração
                     decimal resultado = Multip.multip(primeiroNumero, segundoNumero);
                     Visor.Text = resultado.ToString();
                     primeiroNumero = 0; // Reinicie o primeiro número para futuras operações
