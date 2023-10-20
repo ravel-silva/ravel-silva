@@ -1,5 +1,6 @@
 using Calculator.Operações;
-
+using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace Calculator
 {
@@ -11,8 +12,11 @@ namespace Calculator
         }
 
         Soma Soma = new Soma();
-        private decimal primeiroNumero;
+        private decimal primeiroNumero = 0m;
         private string Operador = "";
+
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -64,14 +68,25 @@ namespace Calculator
             Visor.Text += "0";
         }
 
+        /* private void IgnZeros(string texto)
+         {
+             // Use a cultura Invariante para garantir que o ponto seja um separador decimal padrão
+             if (decimal.TryParse(texto, NumberStyles.Float, CultureInfo.InvariantCulture, out decimal numero))
+             {
+                 // Use formatação para mostrar a saída
+                  Visor.Text = numero.ToString(numero == (int)numero ? "0" : "0.0#");
+             }
+
+         }*/
+
         private void button11_Click(object sender, EventArgs e)//soma
         {
             Operador = "+";
 
             // Verifique se já temos o primeiro número
-            if (primeiroNumero == 0)
+            if (primeiroNumero == 0m)
             {
-                if (decimal.TryParse(Visor.Text, out primeiroNumero))
+                if (decimal.TryParse(Visor.Text, CultureInfo.InvariantCulture, out primeiroNumero))
                 // o método TryParse é uma maneira segura de tentar converter uma representação de string em um tipo de dado específico e verificar se a conversão foi bem-sucedida.
                 // Ele é comumente usado para converter strings em tipos numéricos, como int, decimal, double, entre outros.
                 // TryParse --> Visor.Text: A string que você deseja converter em um número decimal "var primeiroNumero".
@@ -84,7 +99,7 @@ namespace Calculator
             else
             {
                 decimal segundoNumero;
-                if (decimal.TryParse(Visor.Text, out segundoNumero))
+                if (decimal.TryParse(Visor.Text, CultureInfo.InvariantCulture, out segundoNumero))
                 {
                     // Use a classe Soma para fazer a soma
                     decimal resultado = Soma.soma(primeiroNumero, segundoNumero);
@@ -100,9 +115,9 @@ namespace Calculator
         {
             Operador = "-";
             // Verifique se já temos o primeiro número
-            if (primeiroNumero == 0)
+            if (primeiroNumero == 0m)
             {
-                if (decimal.TryParse(Visor.Text, out primeiroNumero))
+                if (decimal.TryParse(Visor.Text, CultureInfo.InvariantCulture, out primeiroNumero))
                 {
                     Visor.Text = string.Empty; // Limpe o visor para o segundo número
                 }
@@ -111,7 +126,7 @@ namespace Calculator
             else
             {
                 decimal segundoNumero;
-                if (decimal.TryParse(Visor.Text, out segundoNumero))
+                if (decimal.TryParse(Visor.Text, CultureInfo.InvariantCulture, out segundoNumero))
                 {
                     // Use a classe Subt para fazer a subtração
                     decimal resultado = Subt.subt(primeiroNumero, segundoNumero);
@@ -126,9 +141,9 @@ namespace Calculator
         {
             Operador = "/";
             // Verifique se já temos o primeiro número
-            if (primeiroNumero == 0)
+            if (primeiroNumero == 0m)
             {
-                if (decimal.TryParse(Visor.Text, out primeiroNumero))
+                if (decimal.TryParse(Visor.Text, CultureInfo.InvariantCulture, out primeiroNumero))
                 {
                     Visor.Text = string.Empty; // Limpe o visor para o segundo número
                 }
@@ -137,7 +152,7 @@ namespace Calculator
             else
             {
                 decimal segundoNumero;
-                if (decimal.TryParse(Visor.Text, out segundoNumero))
+                if (decimal.TryParse(Visor.Text, CultureInfo.InvariantCulture, out segundoNumero))
                 {
                     // Use a classe Divisao para fazer a subtração
                     decimal resultado = Divisao.devisao(primeiroNumero, segundoNumero);
@@ -152,9 +167,9 @@ namespace Calculator
         {
             Operador = "*";
             // Verifique se já temos o primeiro número
-            if (primeiroNumero == 0)
+            if (primeiroNumero == 0m)
             {
-                if (decimal.TryParse(Visor.Text, out primeiroNumero))
+                if (decimal.TryParse(Visor.Text, CultureInfo.InvariantCulture, out primeiroNumero))
                 {
                     Visor.Text = string.Empty; // Limpe o visor para o segundo número
                 }
@@ -163,7 +178,7 @@ namespace Calculator
             else
             {
                 decimal segundoNumero;
-                if (decimal.TryParse(Visor.Text, out segundoNumero))
+                if (decimal.TryParse(Visor.Text, CultureInfo.InvariantCulture, out segundoNumero))
                 {
                     // Use a classe Muktio para fazer a subtração
                     decimal resultado = Multip.multip(primeiroNumero, segundoNumero);
@@ -182,7 +197,7 @@ namespace Calculator
         private void button12_Click(object sender, EventArgs e)//igual
         {
             decimal segundoNumero;
-            if (decimal.TryParse(Visor.Text, out segundoNumero))
+            if (decimal.TryParse(Visor.Text, CultureInfo.InvariantCulture, out segundoNumero))
             {
                 decimal resultado = 0m;
 
@@ -206,9 +221,17 @@ namespace Calculator
                         primeiroNumero = 0; //Reinicie o primeiro número para futuras operações
                         break;
                 }
+
                 Visor.Text = resultado.ToString();
             }
 
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            Visor.Text += ".";
+            string cleanedInput = Regex.Replace(Visor.Text, @"\.{2,}", ".");
+            Visor.Text = cleanedInput;
         }
     }
 }

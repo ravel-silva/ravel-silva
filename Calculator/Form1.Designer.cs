@@ -224,6 +224,7 @@
             button17.TabIndex = 17;
             button17.Text = ",";
             button17.UseVisualStyleBackColor = true;
+            button17.Click += button17_Click;
             // 
             // Form1
             // 
