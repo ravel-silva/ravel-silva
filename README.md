@@ -10,8 +10,13 @@
   <img src="https://github.com/ravel-silva/ravel-silva/assets/134017770/1609e8ba-17b5-477a-8c4c-f3d8b0de62ad" alin="center" heigth="50" width="60">
   <img src="https://github.com/ravel-silva/ravel-silva/assets/134017770/8249d0d0-c2bb-4953-aca9-6a69a8eafcb9" alin="center" heigth="50" width="60">
   <img src="https://github.com/ravel-silva/ravel-silva/assets/134017770/dfe3c361-fe92-41ac-9c65-e0dbd38856c1" alin="center" heigth="50" width="60">
-  <img src="https://github.com/ravel-silva/ravel-silva/assets/134017770/fb295011-9c54-49a0-a8df-f22adb0a6a68" alin="center" heigth="100" width="100">
+  <img src="https://github.com/ravel-silva/ravel-silva/assets/134017770/bcc37d78-a048-4bc6-ab80-7870789d886e" alin="center" width="51">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alin="center" heigth="100" width="60">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alin="center" heigth="100" width="60">          
 </div>
+
+
+
 
 
 
